@@ -1,19 +1,24 @@
 #include <iostream>
 using namespace std;
 
+
+int tambah(int a, int b) {
+    return a + b;
+}
+
+void coba () {
+    cout << "Ini adalah coba void" << endl;// gausah pake return karena void gaada return
+}
 int main () {
- int x = 10;
- int y = 20;
- int z = x + y;
-
- x = 20;
- 
- cout << "nilai x di tambah nilai y = " << x << "+" << y <<"=" << z << endl;
-
- const int a = 5;
- const int b = 2;
- int c = a * b; 
- cout << "hasil penjumlahan antara nilai " << a << " dikali dengan nilai " << b << " adalah = " << c; 
-
-
+    coba();
+    int hasil = tambah(5, 3);
+    int hasil2 = tambah(10, 20);
+    int hasil3 = tambah(15, 25);
+    cout << "Hasil penjumlahan: " << hasil << endl;
+    cout << "======================" << endl;
+    cout << "Hasil penjumlahan: " << hasil2 << endl;
+    cout << "======================" << endl;
+    cout << "Hasil penjumlahan: " << hasil3 << endl;
+    cout << "======================" << endl;
+    return 0;
 }
