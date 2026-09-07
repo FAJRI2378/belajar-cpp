@@ -3,7 +3,10 @@
 using namespace std;
 
 int main(){
-    int nilai = 99;
+    int nilai;
+
+    cout << "Masukkan nilai: ";
+    cin >> nilai;
 
     if ( nilai >= 90) {
         cout << "Nilai A" << endl;

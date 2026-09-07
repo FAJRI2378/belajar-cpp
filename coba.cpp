@@ -22,6 +22,6 @@ int main(){
  int pengurangan = kurang (10, 5);
  int perkalian = kali (4, 6);
     cout << hasil << endl;
-
+cin.get();
 
 }
