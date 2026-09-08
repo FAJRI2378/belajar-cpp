@@ -8,7 +8,7 @@ int main(){
     cout << "Masukkan nilai: ";
     cin >> nilai;
 
-    if ( nilai >= 90) {
+    if ( nilai >= 87) {
         cout << "Nilai A" << endl;
     } else if (nilai >= 80) {
         cout << "Nilai B" << endl;
