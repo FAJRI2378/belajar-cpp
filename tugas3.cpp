@@ -9,7 +9,7 @@ int main() {
     cin >> bilangan;
     if (bilangan % 2 == 0) {
         cout << bilangan << " adalah bilangan GENAP." << endl;
-    } else {
+    } else {}{
         cout << bilangan << " adalah bilangan GANJIL." << endl;
     }
     return 0;
