@@ -6,9 +6,9 @@ int main() {
     int usia;
     int nilai;
     int nim;
-    string jurusan;
-    string prodi;
-    string goals;
+    char jurusan[100];
+    char prodi[100];
+    char goals[100];
     cout <<"Berapa usia anda? : ";
      cin >> usia;   
     cout << "Usia anda ternyata : " << usia << " tahun" ;
@@ -20,15 +20,15 @@ int main() {
     cin >> nim;
 cout << "===============\n";
     cout << "anda dari jurusan apa ? : ";
-        cin >> jurusan;
+        cin.getline(jurusan, 100);
 cout << "===========\n";
     
 cout << "anda dari prodi apa? :";
-    cin >> prodi;
+    cin.getline(prodi, 100);
 cout << "============\n";
     
 cout<< "cita cita kamu apa? : ";
-    cin >> goals;
+    cin.getline(goals, 100);
     cout << "================\n";
     cout << "INI DATA ANDA";
         cout << endl << usia << endl<< nilai << endl << nim <<endl << jurusan << endl << prodi <<endl << goals << endl;
