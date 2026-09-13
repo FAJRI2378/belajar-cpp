@@ -9,6 +9,8 @@ int main() {
     char jurusan[100];
     char prodi[100];
     char goals[100];
+    char nama[100];
+    
     cout <<"Berapa usia anda? : ";
      cin >> usia;   
     cout << "Usia anda ternyata : " << usia << " tahun" ;
@@ -41,6 +43,7 @@ cout<< "cita cita kamu apa? : ";
         else {
         cout << "dengan nilai segitu kamu saya do saja";
             }
+        
     
     
     return 0;
