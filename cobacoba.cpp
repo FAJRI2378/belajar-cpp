@@ -10,6 +10,8 @@ int main() {
     char prodi[100];
     char goals[100];
     char nama[100];
+    char universitas[100];
+
     
     cout <<"Berapa usia anda? : ";
      cin >> usia;   
