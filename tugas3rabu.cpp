@@ -12,6 +12,10 @@ int main (){
     cin >> kode_barang;
     cout << "Masukkan nama barang: ";
     cin >> nama_barang;
+    cout << "Masukkan kode barang: ";
+    cin >> kode_barang;
+    cout << "Masukkan nama barang: ";
+    cin >> nama_barang;
     if ( kode_barang == 'A' || kode_barang == 'a' ){
         harga_barang = 10000;
     }
