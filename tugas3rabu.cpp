@@ -12,12 +12,11 @@ int main (){
     cin >> kode_barang;
     cout << "Masukkan nama barang: ";
     cin >> nama_barang;
-    cout << "Masukkan kode barang: ";
-    cin >> kode_barang;
-    cout << "Masukkan nama barang: ";
-    cin >> nama_barang;
+    cout << "Masukkan jumlah jual: ";
+    cin >> jumlah_jual;
+
     if ( kode_barang == 'A' || kode_barang == 'a' ){
-        harga_barang = 10000;
+        harga_barang = 15000; // coba logika diskon
     }
     else if( kode_barang == 'B' || kode_barang == 'b'){
         harga_barang = 8000;
@@ -47,6 +46,7 @@ int main (){
     cout << "Harga Barang : " << harga_barang << "\n";
     cout << "Penjualan : " << penjualan << "\n";
     cout << "Diskon : " << diskon << "\n";
+    cout << "Pembelian di atas 10.000 diskon 10%" << "\n";
     cout << "Total Penjualan : " << total << "\n";
     cout << "==============================" << "\n";
     cout << "         ~Terimakasih~";
