@@ -39,6 +39,7 @@ int main (){
     cout << "=============================" << "\n";
     cout << "(STRUK)PROGRAM PENJUALAN BARANG (STRUK)" << "\n";
     cout << "=============================" << "\n";
+    cout << "===========" << "\n";
     cout << "Kode Barang : " << kode_barang << "\n";
     cout << "Nama Barang : " << nama_barang << "\n";
     cout << "Jumlah : " << jumlah_jual << "\n";
