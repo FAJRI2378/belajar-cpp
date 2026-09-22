@@ -44,6 +44,7 @@ int main (){
     cout << "Nama Barang : " << nama_barang << "\n";
     cout << "Jumlah : " << jumlah_jual << "\n";
     cout << "==============================" << "\n";
+    cout << "==========" << "\n";
     cout << "Harga Barang : " << harga_barang << "\n";
     cout << "Penjualan : " << penjualan << "\n";
     cout << "Diskon : " << diskon << "\n";
