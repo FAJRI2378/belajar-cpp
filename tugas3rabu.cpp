@@ -16,7 +16,7 @@ int main (){
     cin >> jumlah_jual;
 
     if ( kode_barang == 'A' || kode_barang == 'a' ){
-        harga_barang = 15000; // coba logika diskon
+        harga_barang = 15000; // coba coba logika diskon
     }
     else if( kode_barang == 'B' || kode_barang == 'b'){
         harga_barang = 8000;
