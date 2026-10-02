@@ -7,7 +7,7 @@ int main (){
     for(int i = 50; i >= 1; i--){
         x[i] = i;
     }
-    cout << "GANJIL" << endl << endl;
+    cout << "GANJI" << endl << endl;
     for(int i = 49; i >= 1; i-=2){
         cout << x[i] << endl;
     }
