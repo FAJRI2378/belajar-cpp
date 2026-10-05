@@ -6,7 +6,7 @@ int main (){
     int max;
     int min;
     for(int i = 0; i < 5; i++){
-        cout << "ini bilangan ke - " << i + 1 << " : ";
+        cout << "ini bilangan ke ->" << i + 1 << " : ";
         cin >> x[i] ;
     }
     max = x[0];
