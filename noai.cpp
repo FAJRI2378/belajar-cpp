@@ -1,96 +1,75 @@
 #include <iostream>
+#include <string>
+
 using namespace std;
 
-int main (){
+int main() {
     string nmahasiswa;
-    long long penghasilan_ortu;
-    short int jumlah_tanggungan_ortu;
-    bool status_keaktifan_organisasi;
-    int jumlah_prestasi;
-    bool status_penerima_beasiswa_lain;
-    string kategori_beasiswa;
     float ipk;
-    long long besaran_beasiswa;
+    long long penghasilan_ortu;
+    int jumlah_tanggungan_ortu;
+    char status_keaktifan_organisasi; 
+    int jumlah_prestasi;
+    char status_penerima_beasiswa_lain; 
+    
+    string kategori_beasiswa = "";
+    long long besaran_beasiswa = 0;
 
-    cout << "Nama Mahasiswa : " ;
-    cin >> nmahasiswa;
+    // --- PROSES INPUT ---
+    cout << "--- PROGRAM SELEKSI BEASISWA ---" << endl;
+    cout << "Nama Mahasiswa : ";
+    getline(cin, nmahasiswa); // Menggunakan getline agar bisa input nama dengan spasi
+    cout << "Masukkan IPK anda : ";
+    cin >> ipk;
     cout << "Penghasilan orang tua perbulan : ";
     cin >> penghasilan_ortu;
     cout << "Jumlah tanggungan orang tua : ";
     cin >> jumlah_tanggungan_ortu;
-    cout << "Status keaktifan organisasi : ";
+    cout << "Status keaktifan organisasi (Y/T) : ";
     cin >> status_keaktifan_organisasi;
-    cout << "Jumlah prestasi yang dimiliki: ";
+    cout << "Jumlah prestasi yang dimiliki : ";
     cin >> jumlah_prestasi;
-    cout << "Status penerima beasiswa lain : ";
+    cout << "Status penerima beasiswa lain (Y/T) : ";
     cin >> status_penerima_beasiswa_lain;
-    cout << "Masukkan IPK anda: ";
-    cin >> ipk;
+    cout << "======================================\n" << endl;
 
-    if (status_penerima_beasiswa_lain == false && ipk <= 3.50) {
-        cout << "Maaf anda tidak berhak menerima beasiswa ini" << endl;
-    } else {
-        if (penghasilan_ortu < 2000000 && jumlah_tanggungan_ortu > 3 && status_keaktifan_organisasi == true && jumlah_prestasi > 2 && ipk > 3.50) {
-            cout << "Selamat yaa anda bisa menerima beasiswa ini" << endl;
-        } else {
-            cout << "Maaf anda tidak bisa menerima beasiswa ini, tetap semangat guys" << endl;
-        }
-    }
-    else if (kategori_beasiswa == "Beasiswa prestasi") {
-        if (ipk >= 3.50) {
-             cout << "Selamat yaa anda bisa menerima beasiswa ini" << endl;
-        } else if (jumlah_prestasi >= 2) {
-            cout << "Selamat anda berhak menerima beasiswa ini" << endl;
-        } else if (status_keaktifan_organisasi == true) {
-            cout << "Selamat anda berhak menerima beasiswa ini" << endl; 
-        }else {
-           cout << "Maaf anda tidak bisa menerima beasiswa ini, tetap semangat guys" << endl;
-        }
-    }
-    else if (kategori_beasiswa == "Beasiswa Akademik") {
-        if ( ipk >= 3.20 && jumlah_prestasi >=1 && status_keaktifan_organisasi == true){
-             cout << "Selamat yaa anda bisa menerima beasiswa ini" << endl;
-        }else {
-             cout << "Maaf anda tidak bisa menerima beasiswa ini, tetap semangat guys" << endl;
-        }
-    }
-    else if (kategori_beasiswa == "Beasiswa ekonomi"){
-        if (penghasilan_ortu <= 5000000 && jumlah_tanggungan_ortu >=3 )
+    // --- ATURAN SELEKSI (Berdasarkan Gambar) ---
+    
+    // 1. Cek Syarat Dasar: Tidak dapat beasiswa jika sedang menerima beasiswa lain ATAU IPK < 3.00
+    if ((status_penerima_beasiswa_lain == 'Y' || status_penerima_beasiswa_lain == 'y') || ipk < 3.00) {
+        cout << "Maaf " << nmahasiswa << ", Anda tidak berhak menerima beasiswa." << endl;
+        cout << "Alasan: Sedang menerima beasiswa lain atau IPK kurang dari 3.00." << endl;
+        cout << "Tetap semangat guys!" << endl;
     } 
+    else {
+        // Jika lolos syarat dasar, program melanjutkan pemeriksaan Kategori Beasiswa
+        
+        // Kategori 1: Beasiswa Prestasi
+        if (ipk >= 3.50 && jumlah_prestasi >= 2 && (status_keaktifan_organisasi == 'Y' || status_keaktifan_organisasi == 'y')) {
+            kategori_beasiswa = "Beasiswa Prestasi";
+            besaran_beasiswa = 5000000;
+        } 
+        // Kategori 2: Beasiswa Akademik (Jika tidak memenuhi Beasiswa Prestasi)
+        else if (ipk >= 3.25 && jumlah_prestasi >= 1) {
+            kategori_beasiswa = "Beasiswa Akademik";
+            besaran_beasiswa = 3500000;
+        } 
+        // Kategori 3: Beasiswa Ekonomi (Jika tidak memenuhi Prestasi & Akademik)
+        else if (penghasilan_ortu <= 5000000 && jumlah_tanggungan_ortu >= 3 && ipk >= 3.00) {
+            kategori_beasiswa = "Beasiswa Ekonomi";
+            besaran_beasiswa = 4000000;
+        } 
+        // Kategori 4: Beasiswa Reguler (Memenuhi syarat dasar tapi tidak masuk 3 kategori di atas)
+        else {
+            kategori_beasiswa = "Beasiswa Reguler";
+            besaran_beasiswa = 2000000;
+        }
 
-    cout << "======================" << endl;
-    cout << "Jenis Baesiswa";
-    cout << "besaran kategori";
+        // --- PROSES OUTPUT (Jika Lolos) ---
+        cout << "Selamat yaa, Anda berhak menerima beasiswa!" << endl;
+        cout << "Jenis Beasiswa   : " << kategori_beasiswa << endl;
+        cout << "Besaran Bantuan  : Rp" << besaran_beasiswa << endl;
+    }
+
+    return 0;
 }
-
-
-//         if (ukuran_baju == "S") {
-//             harga_baju = 200000;
-//         } else if (ukuran_baju == "M") {
-//             harga_baju = 220000;
-//         } else {
-//             harga_baju = 250000;
-//         }
-//     } else if (kode_baju == 2) {
-//         merk_baju = "Prada";
-//         if (ukuran_baju == "S") {
-//             harga_baju = 150000;
-//         } else if (ukuran_baju == "M") {
-//             harga_baju = 160000;
-//         } else {
-//             harga_baju = 170000;
-//         }
-//     } else if (kode_baju == 3) {
-//         merk_baju = "Gucci";
-//         harga_baju = 200000; 
-//     } else {
-//         cout << "Kode baju salah." << endl;
-//         return 1;
-//     }
-
-//     cout << "Merk Baju: " << merk_baju << endl;
-//     cout << "Ukuran Baju: " << ukuran_baju << endl;
-//     cout << "Harga Baju: Rp" << harga_baju << endl;
-
-//     return 0;
-// }
