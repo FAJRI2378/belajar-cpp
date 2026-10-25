@@ -11,7 +11,7 @@ int main(){
     int hari_penjualan_tertinggi = 0;
     int hari_diatas_rata_rata= 0;
     cout << "Menampilkan data Penjualan" << endl;
-    for(int i = 0 ; i < 7; i++){
+    for(intx i = 0 ; i < 7; i++){
         cout << " Hari ke - " << (i + 1) << " : ";
         cin >> jumlah_produk_terjual [i];
         total += jumlah_produk_terjual[i];
@@ -23,14 +23,14 @@ int main(){
         if (i == 0 || jumlah_produk_terjual[i] < penjualan_terendah) {
             penjualan_terendah = jumlah_produk_terjual[i];
         }
-    
+        
     }
-     for(int i = 0 ; i < 7; i++){
-                if (jumlah_produk_terjual[i] > rata_rata) {
-            hari_diatas_rata_rata++;
-        } 
-     }
     
+    for(int i = 0 ; i < 7; i++){
+               if (jumlah_produk_terjual[i] > rata_rata) {
+           hari_diatas_rata_rata++;
+       } 
+    }
     
     cout << "============= DATA PENJUALAN ==================" << endl;
     cout << "Total Penjualan : " << total << " produk"<< endl ;
@@ -38,7 +38,7 @@ int main(){
     cout << "penjualan tertinggi : " << penjualan_tertinggi << endl;
     cout << "hari dengan penjualan tertinggi : " << hari_penjualan_tertinggi << endl ;
     cout << "penjualan terendah : " << penjualan_terendah << endl ;
-    cout << "hari dengan penjualan di atas rata rata adalah hari ke - : " << hari_diatas_rata_rata << endl;
+    cout << "hari dengan pe njualan di atas rata rata adalah hari ke - : " << hari_diatas_rata_rata << endl;
     return 0;
 
 }
