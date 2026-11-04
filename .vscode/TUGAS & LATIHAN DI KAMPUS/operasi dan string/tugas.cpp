@@ -14,7 +14,7 @@ void tampilkanPanjang(string teks){
 
 int carikata(string teks, string kata){
    size_t posisi = teks.find(kata);
-    if (posisi != string::npos){
+    if (po sisi != string::npos){
         cout << "Kata '" << kata << "' ditemukan pada posisi indeks ke : " << posisi << endl;
         return posisi;
     } else {
