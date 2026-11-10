@@ -116,6 +116,7 @@ int main() {
             cout << "SKS         : " << mhs[i].mk[j].sks << endl;
             cout << "Nilai       : " << mhs[i].mk[j].nilai << endl;
             cout << "TotalSKS    : " << mhs[i].mk[j].total_sks << endl;
+            cout << "TotalSKS    : " << mhs[i].mk[j].total_sks << endl;
             cout << endl;
         }
         cout << "IPK   : " << fixed << setprecision(2) << mhs[i].ipk << endl; 
